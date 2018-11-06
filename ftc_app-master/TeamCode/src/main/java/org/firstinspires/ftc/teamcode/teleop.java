@@ -52,7 +52,7 @@ import com.qualcomm.robotcore.util.Range;
 
 @TeleOp(name="stick_y tank drive", group="Linear Opmode")
 //@Disabled
-public class my_BasicOpMode_Linear extends LinearOpMode {
+public class teleop extends LinearOpMode {
 
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
@@ -87,6 +87,8 @@ public class my_BasicOpMode_Linear extends LinearOpMode {
         mDrv_l0  = hardwareMap.get(DcMotor.class, "mDrv_l0");
         mDrv_l1  = hardwareMap.get(DcMotor.class, "mDrv_l1");
 
+        mDrv_r1.setDirection(DcMotor.Direction.REVERSE);
+        mDrv_l1.setDirection(DcMotor.Direction.REVERSE);
 
         // Most robots need the motor on one side to be reversed to drive forward
         // Reverse the motor that runs backwards when connected directly to the battery
